@@ -20,9 +20,15 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <NavBar />
-          <Route exact path="/" render={() => <div>Home</div>} />
-          <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
+            <NavBar />
+            <Route exact path="/" render={() => <div>Home</div>} />
+            
+            {/*Below, the render function passes the object, routerProps, as a parameter to <MoviesPage />. 
+            Using "render", instead of component also passes in the URL path that causes that calls the render, "/movies".            
+            The spread operator will create props for key present in routerProps.
+            
+            */}
+            <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
         </div>
       </Router>
     );
