@@ -7,12 +7,19 @@ const NavBar = () => {
       <NavLink 
         style={{ marginRight: '10px' }} 
         to="/"
+        activeStyle={{
+          background: "yellow"
+        }}
+
       >
         Home
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
         to="/movies"
+        activeStyle={{
+          background: "yellow"
+        }}
       >
         Movies
       </NavLink>
